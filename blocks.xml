@@ -1,0 +1,54 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="s4d_login" id="UM.$mg!Jw2!,+?zN{$b:" collapsed="true" x="0" y="0">
+    <value name="TOKEN">
+      <shadow type="text" id="?-RroYeg#UOvG_-zZl,=">
+        <field name="TEXT">MTAxNjM5MjM0NTE0ODczNTYxOQ.GQXcjz.Fcc3PbDHSmfUwfH6mJin69IiBnNbAje-ZXaeX4</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="s4d_database_create_new" id="p]fj]ZkZQ0sn$}YmrfC+" collapsed="true" x="0" y="96">
+    <value name="NAME">
+      <shadow type="text" id="wP1Ln5vQi2DZzjK5EZIR">
+        <field name="TEXT">database1</field>
+      </shadow>
+    </value>
+    <value name="FILE">
+      <shadow type="text" id="`gX6kbv^b}lxZx8f-C1)">
+        <field name="TEXT">database</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="on_slash" id="~BHv[?I}O;#S`+b4w8Ay" x="0" y="201">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id=")wfju`CWDC1}%U5%qH}K">
+        <value name="IF0">
+          <block type="logic_compare" id="/FYnt6HM[1:s=/x6J*EU">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="interaction_name" id="VgO?zr*rDKzZ#S^L3#jK"></block>
+            </value>
+            <value name="B">
+              <block type="jg_text_remake_paragraph_quotes" id="_vuBLN%]5yi36AqJ=][M">
+                <field name="TEXT">test</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="slash_reply" id="mwm1t}uET_wOU.HjW#4h">
+            <value name="CONTENT">
+              <block type="jg_text_remake_paragraph_quotes" id="A{,mfi5Oz$(TyG!#Z1(-">
+                <field name="TEXT">ok</field>
+              </block>
+            </value>
+            <value name="BOOLEAN">
+              <block type="logic_boolean" id="5T#^fS@Hsv:l1Dp/VO]_">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
