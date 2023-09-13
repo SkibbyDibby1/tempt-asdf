@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config();
 (async()=>{
     // default imports
     const events = require('events');
@@ -18,6 +20,7 @@
 
     // block imports
     let https = require("https")
+    const { TicTacToe } = require("discord-gamecord");
     const Database  = require("easy-json-database")
     
     // define s4d components (pretty sure 90% of these arnt even used/required)
@@ -128,7 +131,38 @@
     
     s4d.client.on('interactionCreate', async (interaction) => {
               if ((interaction.commandName) == 'purge') {
+        (interaction.channel).bulkDelete(((interaction.options.getInteger('amount'))|1));
       }
+    
+        });
+    
+    s4d.client.on('interactionCreate', async (interaction) => {
+              if ((interaction.commandName) == 'tic_tac_toe') {
+    
+            new TicTacToe({
+                message: interaction,
+                slash_command: true,
+                opponent: ,
+                embed: {
+                    title: 'Tic Tac Toe',
+                    overTitle: 'Game Over',
+                    color: '#5865F2',
+                },
+                oEmoji: '🔵',
+                xEmoji: '❌',
+                blankEmoji: '➖',
+                oColor: 'PRIMARY',
+                xColor: 'DANGER',
+                waitMessage: 'Waiting for the opponent...',
+                turnMessage: '{emoji} | Its now **{player}** turn!',
+                askMessage: 'Hey {opponent}, {challenger} challenged you for a game of Tic Tac Toe!',
+                cancelMessage: 'Looks like they refused to have a game of Tic Tac Toe. :(',
+                timeEndMessage: 'Since the opponent didnt answer, i dropped the game!',
+                drawMessage: 'It was a draw!',
+                winMessage: '{emoji} | **{winner}** won the game!',
+                gameEndMessage: 'The game went unfinished :(',
+            }).startGame();
+            }
     
         });
     
