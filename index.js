@@ -1,5 +1,3 @@
-const dotenv = require('dotenv');
-dotenv.config();
 (async()=>{
     // default imports
     const events = require('events');
@@ -86,7 +84,7 @@ dotenv.config();
     
 
     // blockly code
-    await s4d.client.login(process.env.DISCORD_TOKEN).catch((e) => {
+    await s4d.client.login((process.env[String('DISCORD_TOKEN')])).catch((e) => {
             const tokenInvalid = true;
             const tokenError = e;
             if (e.toString().toLowerCase().includes("token")) {
@@ -117,6 +115,19 @@ dotenv.config();
               if ((interaction.commandName) == 'reset') {
         database1.delete(String('count'));
         await interaction.reply({ content: 'reset database', ephemeral: true, components: [] });
+      }
+    
+        });
+    
+    s4d.client.on('interactionCreate', async (interaction) => {
+              if ((interaction.commandName) == 'verify') {
+        (interaction.member).roles.add(((s4d.client.guilds.cache.get('1012562113069318164')).roles.cache.get('1012571734337142824')));
+      }
+    
+        });
+    
+    s4d.client.on('interactionCreate', async (interaction) => {
+              if ((interaction.commandName) == 'purge') {
       }
     
         });
