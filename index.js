@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config();
 (async()=>{
     // default imports
     const events = require('events');
@@ -84,7 +86,7 @@
     
 
     // blockly code
-    await s4d.client.login('').catch((e) => {
+    await s4d.client.login(process.env.DISCORD_TOKEN).catch((e) => {
             const tokenInvalid = true;
             const tokenError = e;
             if (e.toString().toLowerCase().includes("token")) {
@@ -98,23 +100,23 @@
     s4d.client.on('interactionCreate', async (interaction) => {
               if ((interaction.commandName) == 'add') {
         database1.add(String('count'), parseInt(1));
-        await interaction.reply({ content: ('added 1 database, currently at: ' + String(database1.get(String('count')))), ephemeral: false, components: [] });
+        await interaction.reply({ content: ('added 1 database, currently at: ' + String(database1.get(String('count')))), ephemeral: true, components: [] });
       }
     
         });
     
     s4d.client.on('interactionCreate', async (interaction) => {
               if ((interaction.commandName) == 'subtract') {
-        database1.add(String('count'), parseInt(1));
-        await interaction.reply({ content: ('subtracted 1 database, currently at: ' + String(database1.get(String('count')))), ephemeral: false, components: [] });
+        database1.subtract(String('count'), parseInt(1));
+        await interaction.reply({ content: ('subtracted 1 database, currently at: ' + String(database1.get(String('count')))), ephemeral: true, components: [] });
       }
     
         });
     
     s4d.client.on('interactionCreate', async (interaction) => {
               if ((interaction.commandName) == 'reset') {
-        database1.set(String('count'), '0');
-        await interaction.reply({ content: ('reset database, currently at: ' + String(database1.get(String('count')))), ephemeral: false, components: [] });
+        database1.delete(String('count'));
+        await interaction.reply({ content: 'reset database', ephemeral: true, components: [] });
       }
     
         });
