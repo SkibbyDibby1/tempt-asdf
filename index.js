@@ -137,7 +137,12 @@ dotenv.config();
 
     s4d.client.on('interactionCreate', async (interaction) => {
         if ((interaction.commandName) == 'verify') {
-            (interaction.member).roles.add(((s4d.client.guilds.cache.get('1012562113069318164')).roles.cache.get('1012571734337142824')));
+            (interaction.member).roles.add(((s4d.client.guilds.cache.get('1012571734337142824')).roles.cache.get('1012571734337142824')));
+            await interaction.reply({
+                content: (String(interaction.member) + ' Verified!'),
+                ephemeral: true,
+                components: []
+            });
         }
 
     });
