@@ -88,7 +88,7 @@ dotenv.config();
 
 
     // blockly code
-    await s4d.client.login(processes.env.DISCORD_TOKEN).catch((e) => {
+    await s4d.client.login(process.env.DISCORD_TOKEN).catch((e) => {
         const tokenInvalid = true;
         const tokenError = e;
         if (e.toString().toLowerCase().includes("token")) {
@@ -141,8 +141,8 @@ dotenv.config();
                 content: (String(interaction.member) + ' Verified!'),
                 ephemeral: true,
                 components: []
-            (interaction.member).roles.add(((s4d.client.guilds.cache.get('1012571734337142824')).roles.cache.get('1012571734337142824')));
             });
+            (interaction.member).roles.add(((s4d.client.guilds.cache.get('1012571734337142824')).roles.cache.get('1012571734337142824')));
         }
 
     });
