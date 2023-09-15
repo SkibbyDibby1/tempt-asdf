@@ -2,7 +2,7 @@
   <block type="s4d_login" id="UM.$mg!Jw2!,+?zN{$b:" collapsed="true" x="0" y="0">
     <value name="TOKEN">
       <shadow type="text" id="?-RroYeg#UOvG_-zZl,=">
-        <field name="TEXT">MTAxNjM5MjM0NTE0ODczNTYxOQ.GQXcjz.Fcc3PbDHSmfUwfH6mJin69IiBnNbAje-ZXaeX4</field>
+        <field name="TEXT"></field>
       </shadow>
     </value>
   </block>
@@ -18,7 +18,7 @@
       </shadow>
     </value>
   </block>
-  <block type="on_slash" id="~BHv[?I}O;#S`+b4w8Ay" x="0" y="201">
+  <block type="on_slash" id="~BHv[?I}O;#S`+b4w8Ay" x="0" y="192">
     <statement name="STATEMENTS">
       <block type="controls_if" id=")wfju`CWDC1}%U5%qH}K">
         <value name="IF0">
@@ -29,21 +29,261 @@
             </value>
             <value name="B">
               <block type="jg_text_remake_paragraph_quotes" id="_vuBLN%]5yi36AqJ=][M">
-                <field name="TEXT">test</field>
+                <field name="TEXT">add</field>
               </block>
             </value>
           </block>
         </value>
         <statement name="DO0">
-          <block type="slash_reply" id="mwm1t}uET_wOU.HjW#4h">
-            <value name="CONTENT">
-              <block type="jg_text_remake_paragraph_quotes" id="A{,mfi5Oz$(TyG!#Z1(-">
-                <field name="TEXT">ok</field>
+          <block type="s4d_add_data_new" id="[+?@LtJu[srx.TsIbMG.">
+            <value name="COUNT">
+              <shadow type="math_number" id="*$6zR2=?6fFFTf24~7+x">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="KEY">
+              <shadow type="text" id="!=TFEBZ;AJdRYWQ)1bFh">
+                <field name="TEXT">count</field>
+              </shadow>
+            </value>
+            <value name="NAME">
+              <shadow type="text" id="@:No=Dg@8lD)DNT,Wa:h">
+                <field name="TEXT">database1</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="slash_reply" id="mwm1t}uET_wOU.HjW#4h">
+                <value name="CONTENT">
+                  <block type="text_join" id="N;Va)0UF,F18FjN]S+kX">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="jg_text_remake_paragraph_quotes" id="A{,mfi5Oz$(TyG!#Z1(-">
+                        <field name="TEXT">added 1 database, currently at: </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="s4d_get_data_new" id="qGhK+|-3qlb}{j@?`=oS">
+                        <value name="KEY">
+                          <shadow type="text" id="Ss9me[y|42nd|3dq.~/:">
+                            <field name="TEXT">count</field>
+                          </shadow>
+                        </value>
+                        <value name="NAME">
+                          <shadow type="text" id="P!1j1E:w_aY9]8|}c2mq">
+                            <field name="TEXT">database1</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="BOOLEAN">
+                  <block type="logic_boolean" id="5T#^fS@Hsv:l1Dp/VO]_">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="on_slash" id="F:5uu{BV)CUm$2S1(=y2" x="0" y="677">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="u:^uW(q6BW7F-1}v]n;}">
+        <value name="IF0">
+          <block type="logic_compare" id="UT0Sk~LQ|1:Xv98.3AtE">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="interaction_name" id="[43xSJ:wvvabC}Gt)=)}"></block>
+            </value>
+            <value name="B">
+              <block type="jg_text_remake_paragraph_quotes" id="v9~@9s#`Pv}VEvhsC!h:">
+                <field name="TEXT">subtract</field>
               </block>
             </value>
-            <value name="BOOLEAN">
-              <block type="logic_boolean" id="5T#^fS@Hsv:l1Dp/VO]_">
-                <field name="BOOL">TRUE</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_subtract_data_new" id="1IrsV}Uy^xZnTS67)PB_">
+            <value name="COUNT">
+              <shadow type="math_number" id="M/ff.h.aEF|3Ic3I||)9">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="KEY">
+              <shadow type="text" id="WJ5F[Vi3,e28Wgb^wDF!">
+                <field name="TEXT">count</field>
+              </shadow>
+            </value>
+            <value name="NAME">
+              <shadow type="text" id="$Blc[{l/S`I2?B3IfXR)">
+                <field name="TEXT">database1</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="slash_reply" id="PvjFxBPW5`saYr5@Ds88">
+                <value name="CONTENT">
+                  <block type="text_join" id="Y6ex?F1EVQ;tAfrBa}l/">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="jg_text_remake_paragraph_quotes" id="dMQED-Eb7M0`r.fJ*N0;">
+                        <field name="TEXT">subtracted 1 database, currently at: </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="s4d_get_data_new" id="iX5^N[59derx+$2X:*Cm">
+                        <value name="KEY">
+                          <shadow type="text" id="jb0bu+bW~uw~9eW21/c0">
+                            <field name="TEXT">count</field>
+                          </shadow>
+                        </value>
+                        <value name="NAME">
+                          <shadow type="text" id="iM}gNSudr}[E}t-jt7tz">
+                            <field name="TEXT">database1</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="BOOLEAN">
+                  <block type="logic_boolean" id="h3+Ps6cR??5l`haIQ`nH">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="on_slash" id="i)9WMdMRm2xzE0RhK.%L" x="0" y="1162">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="!#I^Aep?ryKvsi=SoU!`">
+        <value name="IF0">
+          <block type="logic_compare" id="fJ3T;_|-B*6T(ql5`P8B">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="interaction_name" id="5XA!()}^c#G}N-yZW,Sp"></block>
+            </value>
+            <value name="B">
+              <block type="jg_text_remake_paragraph_quotes" id="vF7UE0-yZo[8;x,%PpC7">
+                <field name="TEXT">reset</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_delete_data_new" id="A}5r2poBl~Y+,n3Bn|nE">
+            <value name="KEY">
+              <shadow type="text" id="|]yB0$StjD)^GT}VRRiG">
+                <field name="TEXT">count</field>
+              </shadow>
+            </value>
+            <value name="NAME">
+              <shadow type="text" id="gu}gA_{VLZY.Tzq(_/Gi">
+                <field name="TEXT">database1</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="slash_reply" id="KKG(rO]Y:[G%pARxqZQ=">
+                <value name="CONTENT">
+                  <block type="jg_text_remake_paragraph_quotes" id="fGo]#r^h!j;on)e[U}v|">
+                    <field name="TEXT">reset database</field>
+                  </block>
+                </value>
+                <value name="BOOLEAN">
+                  <block type="logic_boolean" id="ha4?XTt,;h5/)._%x7Dy">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="on_slash" id="GJ/`~h%jn;{Wg-#u+3t-" x="0" y="1582">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="gP7GV~`YNv43hkP7TG[J">
+        <value name="IF0">
+          <block type="logic_compare" id=";Ti~sqR%Zfi+%)eA_fE8">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="interaction_name" id="/1q2Q3+Ip,rnzY!lb8GT"></block>
+            </value>
+            <value name="B">
+              <block type="jg_text_remake_paragraph_quotes" id="hpX)ZE$:%mKAC)Q+(O5b">
+                <field name="TEXT">verify</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_add_role" id="Y^ia#kxy`!2DLEE}F~}D">
+            <value name="ROLE">
+              <block type="s4d_get_role" id="|Flt(_%le[EJ)BE|of)7">
+                <field name="SEARCH_TYPE">ID</field>
+                <value name="VALUE">
+                  <block type="jg_text_remake_paragraph_quotes" id="SPT):zJW{Hu.;*{t@]bN">
+                    <field name="TEXT">1012571734337142824</field>
+                  </block>
+                </value>
+                <value name="SERVER">
+                  <block type="s4d_get_server" id="__jc}wmcm0,NnxOtlH[*">
+                    <field name="SEARCH_TYPE">ID</field>
+                    <value name="VALUE">
+                      <block type="jg_text_remake_paragraph_quotes" id="hYvq%t_zH@^v@};bIj9e">
+                        <field name="TEXT">1012562113069318164</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="MEMBER">
+              <shadow type="s4d_message_member" id="X0pBOeD8XLMHBTI~WNBt"></shadow>
+              <block type="interaction_author" id="zuX;J`O|_MJg:eXm1IPx"></block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="on_slash" id="1OT(%4Q?6N8#os4d/jqx" x="0" y="1969">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="i}}Du/,![P_eA0-{{N`u">
+        <value name="IF0">
+          <block type="logic_compare" id="@;3Dg=*=h%*Ngh{P4|1?">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="interaction_name" id="nyX;G,/:Q5u.loq.b#))"></block>
+            </value>
+            <value name="B">
+              <block type="jg_text_remake_paragraph_quotes" id="]ToU@26J8:o1)m2l1M!r">
+                <field name="TEXT">purge</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_purge" id="!.Wma[a%3pi04v}EqC]8">
+            <value name="CHANNEL">
+              <block type="interaction_channel" id=",oek}q#VEq{0q1~5(ha$"></block>
+            </value>
+            <value name="AMOUNT">
+              <block type="options" id="ze#^4g?j(UJ9jRKz*BE~">
+                <mutation mode="Integer" type="null"></mutation>
+                <field name="SEARCH">Integer</field>
+                <value name="BOOLEAN">
+                  <block type="jg_text_remake_paragraph_quotes" id="$IEucgp5wsup`Waod)+!">
+                    <field name="TEXT">Amount</field>
+                  </block>
+                </value>
               </block>
             </value>
           </block>
