@@ -207,4 +207,73 @@
       </block>
     </statement>
   </block>
+  <block type="on_slash" id="h,Kvn]BBJLHVW[?,*Mj3" x="0" y="1582">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="n}rchYT#t+c9-%:O,-jG">
+        <value name="IF0">
+          <block type="logic_compare" id="sRz`B,M*{Ml=}ab7d5Lw">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="interaction_name" id="q/WHtjFk#q2@VIYoSRY!"></block>
+            </value>
+            <value name="B">
+              <block type="jg_text_remake_paragraph_quotes" id="$6|D0Cbj/bxk$Kt:WC~`">
+                <field name="TEXT">verify</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="slash_reply" id="4YXiXt]K,$L;^:2Z*aj.">
+            <value name="CONTENT">
+              <block type="text_join" id=";s%4MgBtZX)vfQf/%a.!">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="interaction_author" id="X-HGhiz(9EJjZxKXZ{cK"></block>
+                </value>
+                <value name="ADD1">
+                  <block type="jg_text_remake_paragraph_quotes" id="PwN#HhOe1SgGM._en4Hu">
+                    <field name="TEXT"> Verified!</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="BOOLEAN">
+              <block type="logic_boolean" id="f}7-RwZ#DQ`7z*^d2%.v">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+            <next>
+              <block type="s4d_add_role" id="GK0QHx@z?-taM5Sj!Dhd">
+                <value name="ROLE">
+                  <block type="s4d_get_role" id="s-s@CF[Z*.;!pN*zv-$L">
+                    <field name="SEARCH_TYPE">ID</field>
+                    <value name="VALUE">
+                      <block type="jg_text_remake_paragraph_quotes" id="H+6)?@sf^9nd|n.hhLVR">
+                        <field name="TEXT">1012571734337142824</field>
+                      </block>
+                    </value>
+                    <value name="SERVER">
+                      <block type="s4d_get_server" id="6BNq^Ji+lCQg@0@s?iND">
+                        <field name="SEARCH_TYPE">ID</field>
+                        <value name="VALUE">
+                          <block type="jg_text_remake_paragraph_quotes" id="~/2x{{~e=A#P6I[_zh:%">
+                            <field name="TEXT">1012571734337142824</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="MEMBER">
+                  <shadow type="s4d_message_member" id="tvLu$l]llqzobTQcCJ)2"></shadow>
+                  <block type="interaction_author" id="Bze/A6v4A;wH4.8YMNoU"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
 </xml>
