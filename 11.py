@@ -4,12 +4,14 @@ with open("hammer_collection.txt", "r") as file:
     for line in file:
         segments = line.strip().split("->")
         input_segment = segments[0].strip()
-        output_segments = segments[1].strip().split()
-        hammer_collection[input_segment] = output_segments
+        output_segment = segments[1].strip()
+        if input_segment not in hammer_collection:
+            hammer_collection[input_segment] = []
+        hammer_collection[input_segment].append(output_segment)
 
 # Step 2: Read recipes from recipe book
 recipes = []
-with open("11_keymaker_recipe.txt", "r") as file:  # Replace "11_keymaker_recipe.txt" with the actual file name
+with open("11_keymaker_recipe.txt", "r") as file:
     for line in file:
         recipe = line.strip().split(" - ")
         recipes.append(recipe)
@@ -23,12 +25,12 @@ for recipe in recipes:
     # Step 4: Apply valid recipe to key segments
     for step in recipe:
         hammer_index, position = map(int, step.strip("()").split(", "))
-        segment = key[position - 1] if position <= len(key) else None  # Get the segment at the specified position
+        segment = key[position - 1] if position <= len(key) else None
         if segment not in hammer_collection or hammer_index > len(hammer_collection.get(segment, [])):
             valid = False
             break
-        new_segments = hammer_collection[segment]
-        key[position - 1] = new_segments[hammer_index - 1]
+        new_segment = hammer_collection[segment][hammer_index - 1]
+        key[position - 1] = new_segment
 
     if valid:
         valid_recipe = recipe
