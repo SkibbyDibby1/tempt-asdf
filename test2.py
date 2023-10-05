@@ -17,7 +17,11 @@ def find_safe_traps(log_file_path):
     safe_traps = []
     for line in lines:
         line = line.strip()
-        trap_id, log = line.split(": ")
+        if ":" in line:
+            trap_id, log = line.split(": ")
+        else:
+            trap_id = line.split()[0]
+            log = line.split()[1:]
         log = log.split()
         if is_trap_safe(log):
             safe_traps.append(int(trap_id))
