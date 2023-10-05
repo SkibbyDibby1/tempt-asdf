@@ -19,25 +19,22 @@ valid_recipe = None
 for recipe in recipes:
     valid = True
     key = list("A" * len(recipe))  # Initialize the key variable
+
+    # Step 4: Apply valid recipe to key segments
     for step in recipe:
         hammer_index, position = map(int, step.strip("()").split(", "))
-        segment = key[position - 1]  # Get the segment at the specified position
-        if segment not in hammer_collection or hammer_index > len(hammer_collection[segment]):
+        segment = key[position - 1] if position <= len(key) else None  # Get the segment at the specified position
+        if segment not in hammer_collection or hammer_index > len(hammer_collection.get(segment, [])):
             valid = False
             break
+        new_segments = hammer_collection[segment]
+        key[position - 1] = new_segments[hammer_index - 1]
+
     if valid:
         valid_recipe = recipe
         break
 
 if valid_recipe:
-    # Step 4: Apply valid recipe to key segments
-    key = list("A" * len(valid_recipe))
-    for step in valid_recipe:
-        hammer_index, position = map(int, step.strip("()").split(", "))
-        segment = key[position - 1]
-        new_segments = hammer_collection[segment]
-        key[position - 1] = new_segments[hammer_index - 1]
-
     # Step 5: Final key segment
     final_key = "".join(key)
     print("The key that can open the chest is:", final_key)
