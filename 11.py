@@ -18,6 +18,7 @@ with open("11_keymaker_recipe.txt", "r") as file:  # Replace "11_keymaker_recipe
 valid_recipe = None
 for recipe in recipes:
     valid = True
+    key = list("A" * len(recipe))  # Initialize the key variable
     for step in recipe:
         hammer_index, position = map(int, step.strip("()").split(", "))
         segment = key[position - 1]  # Get the segment at the specified position
