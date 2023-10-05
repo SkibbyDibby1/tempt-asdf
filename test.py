@@ -1,4 +1,6 @@
 n = 1
+s = ""
+j = " "
 keys = open("01_keymaker_ordered.txt", "r")
 while s != j:
 
@@ -20,4 +22,5 @@ while s != j:
     	j = j+li[i]
     	
     n += 1
+    print(j)
 print("Key found! Key is: " + j)
