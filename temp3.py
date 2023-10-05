@@ -9,6 +9,16 @@ try:
                     line = line.replace("safe", "unsafe")
                 elif "unsafe" in line:
                     line = line.replace("unsafe", "safe")
+
+            words = line.split()
+            if len(words) > 0:
+                last_word = words[-1]
+                if last_word == "safe":
+                    colon_index = line.rfind(":")
+                    if colon_index != -1:
+                        number = line[colon_index - 1]
+                        print(number)
+            
             print(line)
 except FileNotFoundError:
     print(f"File '{file_name}' not found.")
