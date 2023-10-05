@@ -4,7 +4,9 @@ try:
     with open(file_name, "r") as file:
         for line in file:
             line = line.rstrip()
-            if any(word in line for word in ["inactive", "disabled", "quiet", "standby", "idle"]):
+            if any(word in line for word in ["live", "armed", "ready", "primed", "active"]):
+                line += " unsafe"
+            else:
                 line += " safe"
             print(line)
 except FileNotFoundError:
